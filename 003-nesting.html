@@ -41,6 +41,16 @@
 	  }
 	});
 
+	var RecipePhotos = React.createClass({
+	  render: function() {
+	    return (
+	      <div>
+	        RecipePhotos component photos 
+	      </div>
+	    );
+	  }
+	});
+
 	var RecipeBook = React.createClass({
 	  render: function() {
 	    /* component composition == function componsition */
@@ -49,6 +59,7 @@
 	        Hello, world! I am a RecipeBook.
 	        <RecipeList/>
 	        <RecipeForm/>
+          <RecipePhotos />
 	      </div>
 	    );
 	  }
