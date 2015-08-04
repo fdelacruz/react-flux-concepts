@@ -26,7 +26,8 @@
       var Recipe = React.createClass({
         getInitialState : function() {
           return {
-            dropDownIsOpen : false
+            dropDownIsOpen : false,
+            hover : false
           };
         },
         handleClick : function() {
@@ -34,18 +35,23 @@
             dropDownIsOpen : !this.state.dropDownIsOpen
           });
         },
+        handleHover : function() {
+          this.setState({
+            hover : !this.state.hover
+          });
+        },
         renderDropdown: function () {
           return (
-            <div style={{ background: "#ccc" }}>
+            <div style={{ color: "red" }}>
               I am a dropdown!
             </div>
           );
         },
         render : function() {
-          var dropdown = this.state.dropDownIsOpen ? this.renderDropdown() : null;
+          var dropdown = this.state.hover ? this.renderDropdown() : null;
 
           return (
-            <div onClick={this.handleClick}>
+            <div onMouseOver={this.handleHover}>
               Click me!
               {dropdown}
             </div>
